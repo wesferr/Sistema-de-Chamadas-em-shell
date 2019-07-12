@@ -20,10 +20,10 @@ def hello_world():
             cursor.execute("INSERT INTO presenca (nome, matricula, cpf, email, codevento) VALUES ('{}', '{}', '{}', '{}', '{}')".format(request.form['nome'], request.form['matricula'], request.form['cpf'], request.form['email'], request.form['code']))
             con.commit()
             con.close()
-            return "<h1>Registrado, Obrigado</h1>", 200
+            return "<h1>Registrado, Obrigado</h1>\n", 200
         except:
             con.close()
-            return "<h2>Problema com o registro, favor verificar o evento e tentar novamente</h2>", 200
+            return "<h2>Problema com o registro, favor verificar o evento e tentar novamente</h2>\n", 200
 
 
 assert (len(sys.argv) > 4), "usage: {} <usr> <password> <database> <host>".format(sys.argv[0])
